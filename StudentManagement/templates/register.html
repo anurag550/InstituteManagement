@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGNUP</title>
+</head>
+<body>
+<h3 align="center">Register Page</h3>
+<form action="reddata" method="post">
+    {% csrf_token%}
+    <h3 style="color:red" align="center">{{data}}</h3>
+<table align="center" border="2px">
+    <tr>
+        <td>USER NAME:</td>
+        <td><input type="text" name="txtname"></td>
+    </tr>
+    <tr>
+        <td>EMAIL:</td>
+            <td><input type="email" name="txtmail"></td>
+    </tr>
+    <tr>
+        <td>PASSWORD:</td>
+            <td><input type="password" name="txtpassword"></td>
+    </tr>
+    <tr>
+        <td> <input type="submit" name="txtsubmit" value="Register"></td>
+    </tr>
+</table>
+    </form>
+
+</body>
+</html>

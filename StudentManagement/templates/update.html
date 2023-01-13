@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <h2 align="center">Update Details </h2>
+<table align="center">
+    <tr>
+        <td>Student_Name:</td>
+        <td> <input type="text" name="txtname" value="{{ data.Stud_Name }}"> </td>
+    </tr>
+    <tr>
+        <td>Student_Age:</td>
+        <td><input type="number" name="txtage" value="{{ data.Stud_Age }}"></td>
+    </tr>
+    <tr>
+        <td>Student_Phone:</td>
+        <td><input type="number" name="txtphno" value="{{ data.Stud_Phone }}"></td>
+    </tr>
+    <tr>
+    <td>Student_City:</td>
+    <td>
+          <select name="ddlcity">
+          <option selected>{{ data.Stud_City }}</option>
+            {% for i in City_Data %}
+                <option>{{ i.City_Name }}</option>
+            {% endfor %}
+          </select>
+    </td>
+<tr>
+    <td>Student_Course:</td>
+    <td>
+      <select name="ddlcourse">
+      <option selected>{{ data.Stud_Course }}</option>
+        {% for i in Course_Data %}
+            <option>{{ i.Course_Name }}</option>
+        {% endfor %}
+      </select>
+    </td>
+</tr>
+<tr>
+    <td><input type="submit" name="btnsubmit"> </td>
+</tr>
+
+    </table>
+</form>
+
+{% endblock %}
